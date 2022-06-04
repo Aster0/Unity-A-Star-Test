@@ -11,3 +11,6 @@ The code is not optimized as I was just testing my knowledge on A*, if I could d
 As mentioned, this project was done quickly, only took 1-2 hours and is my first time ever implementing an A* algorithm from scratch. 
 
 In the future, I strive to re-do this project and optimzie it.
+
+
+![gif](https://i.gyazo.com/c2bbf3bdc80710601f8f97d0cc7b27e6.gif)
