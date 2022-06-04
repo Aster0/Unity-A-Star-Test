@@ -13,4 +13,4 @@ As mentioned, this project was done quickly, only took 1-2 hours and is my first
 In the future, I strive to re-do this project and optimzie it.
 
 
-![gif](https://i.gyazo.com/c2bbf3bdc80710601f8f97d0cc7b27e6.gif)
+![gif](https://i.gyazo.com/91c8be11d42c17f8f8a29bb85e97e42b.gif)
