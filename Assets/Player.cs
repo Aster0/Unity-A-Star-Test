@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
         
         public int Index { get; set; }
 
-        public Node(GameObject gameObject, Node currentNode, float G, int index)
+        public Node(GameObject gameObject, Node currentNode, float G)
         {
             this.pos = pos;
 
@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
     {
         
         Debug.Log(gridManager.FindNode(transform.position));
-        currentNode = new Node(gridManager.FindNode(transform.position), null, 0, nodeIndex);
+        currentNode = new Node(gridManager.FindNode(transform.position), null, 0);
         
         
 
@@ -173,16 +173,8 @@ public class Player : MonoBehaviour
             bool add = true;
 
 
-            foreach (Node node1 in openList)
-            {
-                if (node1.Index == node.Index)
-                {
-                    add = false;
-                    break;
-                }
-            }
-            
-            if(add)
+
+            if(add && node != null)
                 openList.Add(node);
 
             openList = openList.OrderBy(n => n.F).ToList();
@@ -312,10 +304,39 @@ public class Player : MonoBehaviour
     private Node FindNode(Vector2 pos, float gcost)
     {
         GameObject gameObject = gridManager.FindNode(pos);
+
+        bool test = false;
+        foreach (Node node1 in openList)
+        {
+            if ((Vector2) node1.pos == pos)
+            {
+                Debug.Log("Exists");
+
+                test = true;
+                return null;
+                
+         
+            }
+        }
         
+        foreach (Node node1 in closedList)
+        {
+            if ((Vector2) node1.pos == pos)
+            {
+                Debug.Log("Exists");
+
+                test = true;
+                return null;
+                
+         
+            }
+        }
+        
+        Debug.Log(pos + test.ToString());
 
 
-        return new Node(gameObject, currentNode, gcost, nodeIndex);
+
+        return new Node(gameObject, currentNode, gcost);
     }
     // Start is called before the first frame update
     void Start()
