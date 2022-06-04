@@ -161,10 +161,23 @@ public class Player : MonoBehaviour
     private Node MakeNode(Vector2 nodePos, float gcost)
     {
         Node node = null;
+
+
         
         try
         {
-   
+            foreach (Node node1 in closedList)
+            {
+                if ((Vector2) node1.pos == nodePos)
+                {
+            
+                
+                    return null;
+                
+         
+                }
+            }
+            
             
             nodeIndex++;
             node = FindNode(nodePos, gcost);
@@ -224,7 +237,7 @@ public class Player : MonoBehaviour
         bool add = true;
 
 
-        foreach (Node node in closedList)
+        foreach (Node node in closedList) // dont step into a closed node.
         {
             if (node.Index == currentNode.Index)
             {
@@ -305,34 +318,21 @@ public class Player : MonoBehaviour
     {
         GameObject gameObject = gridManager.FindNode(pos);
 
-        bool test = false;
         foreach (Node node1 in openList)
         {
             if ((Vector2) node1.pos == pos)
             {
-                Debug.Log("Exists");
-
-                test = true;
+                
+      
                 return null;
                 
          
             }
         }
         
-        foreach (Node node1 in closedList)
-        {
-            if ((Vector2) node1.pos == pos)
-            {
-                Debug.Log("Exists");
 
-                test = true;
-                return null;
-                
-         
-            }
-        }
         
-        Debug.Log(pos + test.ToString());
+
 
 
 
