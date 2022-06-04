@@ -8,6 +8,6 @@ The code is not optimized as I was just testing my knowledge on A*, if I could d
 
 
 
-As mentioned, this project was done quickly, only took 1-2 hours. 
+As mentioned, this project was done quickly, only took 1-2 hours and is my first time ever implementing an A* algorithm from scratch. 
 
 In the future, I strive to re-do this project and optimzie it.
